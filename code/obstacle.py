@@ -2,6 +2,9 @@ import pygame
 
 class Block(pygame.sprite.Sprite):
 	def __init__(self,size,color,x,y):
+		"""
+		Creates the obstacle's sprite
+		"""
 		super().__init__()
 		self.image = pygame.Surface((size,size))
 		self.image.fill(color)

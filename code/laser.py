@@ -1,7 +1,10 @@
 import pygame 
 
 class Laser(pygame.sprite.Sprite):
-	def __init__(self,pos,speed,screen_height):
+	def __init__(self,pos,speed,screen_height) -> None:
+		"""
+		creates the laser sprite
+		"""
 		super().__init__()
 		self.image = pygame.Surface((4,20))
 		self.image.fill('white')
@@ -9,10 +12,16 @@ class Laser(pygame.sprite.Sprite):
 		self.speed = speed
 		self.height_y_constraint = screen_height
 
-	def destroy(self):
+	def destroy(self) -> None:
+		"""
+		destroys laser sprite
+		"""
 		if self.rect.y <= -50 or self.rect.y >= self.height_y_constraint + 50:
 			self.kill()
 
 	def update(self):
+		"""
+		updates values durring main loop
+		"""
 		self.rect.y += self.speed
 		self.destroy()
